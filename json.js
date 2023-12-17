@@ -4,20 +4,17 @@ const jsonPhotos = async () => {
   // console.log(data);
 
   const parent = document.getElementById("card-container");
-  data.slice(0, 9).forEach((myPhotos) => {
+  data.slice(400, 418).forEach((myPhotos) => {
     console.log(myPhotos);
     const div = document.createElement("div");
     div.innerHTML = `
     <div class="card card-compact w-96 bg-base-100 shadow-xl">
-  <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
-  <div class="card-body">
-    <h2 class="card-title">Shoes!</h2>
-    <p>If a dog chews shoes whose shoes does he choose?</p>
-    <div class="card-actions justify-end">
-      <button class="btn btn-primary">Buy Now</button>
+         <figure><img src="${myPhotos?.url}" alt="Nop" /></figure>
+         <div class="card-body">
+            <h2>ID: ${myPhotos?.id}</h2>
+            <p class="card-title">${myPhotos?.title.slice(0, 35)}</p>
+         </div>
     </div>
-  </div>
-</div>
     `;
     parent.appendChild(div);
   });
